@@ -1,0 +1,158 @@
+'''
+Created on Dec 14, 2018
+@author: Chauncy
+'''
+import turtle
+import time
+
+def drawflower():
+    # 设置初始位置
+    turtle.penup()
+    turtle.left(90)
+    turtle.fd(200)
+    turtle.pendown()
+    turtle.right(90)
+
+    # 花蕊
+    turtle.fillcolor("#CB002B")
+    turtle.begin_fill()
+    turtle.circle(10, 180)
+    turtle.circle(25, 110)
+    turtle.left(50)
+    turtle.circle(60, 45)
+    turtle.circle(20, 170)
+    turtle.right(24)
+    turtle.fd(30)
+    turtle.left(10)
+    turtle.circle(30, 110)
+    turtle.fd(20)
+    turtle.left(40)
+    turtle.circle(90, 70)
+    turtle.circle(30, 150)
+    turtle.right(30)
+    turtle.fd(15)
+    turtle.circle(80, 90)
+    turtle.left(15)
+    turtle.fd(45)
+    turtle.right(165)
+    turtle.fd(20)
+    turtle.left(155)
+    turtle.circle(150, 80)
+    turtle.left(50)
+    turtle.circle(150, 90)
+    turtle.end_fill()
+
+    # 花瓣1
+    turtle.left(150)
+    turtle.circle(-90, 70)
+    turtle.left(20)
+    turtle.circle(75, 105)
+    turtle.setheading(60)
+    turtle.circle(80, 98)
+    turtle.circle(-90, 40)
+
+    # 花瓣2
+    turtle.left(180)
+    turtle.circle(90, 40)
+    turtle.circle(-80, 98)
+    turtle.setheading(-83)
+
+    # 叶子1
+    turtle.fd(30)
+    turtle.left(90)
+    turtle.fd(25)
+    turtle.left(45)
+    turtle.fillcolor("#2CA46F")
+    turtle.begin_fill()
+    turtle.circle(-80, 90)
+    turtle.right(90)
+    turtle.circle(-80, 90)
+    turtle.end_fill()
+
+    turtle.right(135)
+    turtle.fd(60)
+    turtle.left(180)
+    turtle.fd(85)
+    turtle.left(90)
+    turtle.fd(80)
+
+    # 叶子2
+    turtle.right(90)
+    turtle.right(45)
+    turtle.fillcolor("#2CA46F")
+    turtle.begin_fill()
+    turtle.circle(80, 90)
+    turtle.left(90)
+    turtle.circle(80, 90)
+    turtle.end_fill()
+
+    turtle.left(135)
+    turtle.fd(60)
+    turtle.left(180)
+    turtle.fd(60)
+    turtle.right(90)
+    turtle.circle(200, 60)
+
+def draw_circle():
+    for i in range (200):
+        turtle.right(1)
+        turtle.forward(1)
+
+def draw_love():
+    # turtle.color('pink','mistyrose')
+    turtle.color('#DA3261','#CB002B')
+    turtle.pensize(2)
+    turtle.speed(1000)
+    turtle.begin_fill()
+    turtle.left(140)
+    turtle.forward(112)
+    draw_circle()
+    turtle.left(120)
+    draw_circle()
+    turtle.forward(112)
+    turtle.end_fill()
+
+# turtle.color('maroon')silver  burlywood blanchedalmond burlywood
+turtle.color('#D2B48C') #画笔颜色
+turtle.pensize(3)
+turtle.penup()
+turtle.goto(-200,0)
+turtle.pendown()
+
+# 绘制花
+drawflower()
+
+# 调整画笔
+turtle.penup()
+turtle.home()
+turtle.goto(200,-120)
+turtle.pendown()
+
+draw_love()
+
+# 调整画笔
+turtle.setheading(0)
+turtle.penup()
+turtle.backward(120)
+turtle.right(90)
+turtle.forward(80)
+turtle.pendown()
+turtle.write("I      love    you",  font = ("Gigi", 28,"bold"))
+
+# 移动画笔，绘制时间
+turtle.penup()
+turtle.forward(60)
+turtle.left(90)
+turtle.forward(133)
+turtle.pendown()
+date = time.strftime('%Y.%m.%d',time.localtime(time.time()))
+turtle.write(str(date),  font = ("Gigi", 16,"bold"))
+# print(time.strftime('%Y.%m.%d',time.localtime(time.time())))
+
+# 移动画笔绘制姓名
+turtle.pencolor('#FFDEAD')
+turtle.penup()
+turtle.goto(20,100)
+turtle.write("Q     T     T",  font = ("Gigi", 28,"bold"))
+# turtle.hideturtle()
+turtle.done()
