@@ -1,2 +1,2 @@
 # Confession-with-python
-Speak your love boldly in python
+Speak your love boldly with python
